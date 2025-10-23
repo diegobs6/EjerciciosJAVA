@@ -1,2 +1,2 @@
-# EjerciciosJAVA
-Ejercicios de Gonzalo para mi
+# Ejercicios JAVA
+Ejercicios para aprender POO en java
