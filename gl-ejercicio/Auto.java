@@ -2,7 +2,6 @@ public class Auto extends Vehiculo {
     private int numeroPuertas;
     private boolean hibrido;
 
-    // Constructores
     public Auto(String patente) {
         super(patente);
     }
@@ -14,30 +13,38 @@ public class Auto extends Vehiculo {
         this.hibrido = hibrido;
     }
 
-    // Implementaciones requeridas
     @Override
     public double calcularCostoMantenimiento() {
-     
+        double baseMantenimiento = this.calcularBaseCostoMantenimiento();
+        
+        double recargoPorRasgos = 0;
+        if(this.hibrido) {
+            recargoPorRasgos += 520_000;
+        }
+        if(this.numeroPuertas > 0) {
+            recargoPorRasgos += 33_000;
+        }
+        return baseMantenimiento + recargoPorRasgos;
     }
 
     @Override
     public String descripcionBreve() {
-      }
-
-    @Override
-    public double calcularImpuesto() {
+        
+        return "Auto " + this.numeroPuertas + " puertas " + (this.hibrido ? "Híbrido" : "Convencional") + " - " + this.marca + " (" + this.anio + ")";
     }
 
     @Override
     public double calcularPrimaSeguro() {
-      
-    }
-
-    // Sobrecarga de método
-    public double aplicarDescuento(double porcentaje) {
+        double basePrima = this.calcularBasePrimaSeguro();
+        return basePrima + 350_000;
     }
 
     public double aplicarDescuento(double porcentaje, boolean clienteFiel) {
+        double extraDescuento = 0;
+        if(clienteFiel) {
+            extraDescuento = 5;
+        }
+        return this.aplicarDescuento(porcentaje + extraDescuento);
     }
 
     // Getters y setters

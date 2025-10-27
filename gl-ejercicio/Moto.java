@@ -15,28 +15,36 @@ public class Moto extends Vehiculo {
 
     @Override
     public double calcularCostoMantenimiento() {
+        double baseMantenimiento = this.calcularBaseCostoMantenimiento();
+        
+        double recargoPorRasgos = 0;
+        if(this.usoDeportivo) {
+            recargoPorRasgos += 500_000;
+        }
+        if(this.cilindradaCC > 0) {
+            recargoPorRasgos += 23_000;
+        }
+        return baseMantenimiento + recargoPorRasgos;
     }
 
     @Override
     public String descripcionBreve() {
-     
-    }
-
-    @Override
-    public double calcularImpuesto() {
-      
+        return "Moto " + this.cilindradaCC + "cc " + (this.usoDeportivo ? "Deportivo" : "Estándar") + " - " + this.marca + " (" + this.anio + ")";
     }
 
     @Override
     public double calcularPrimaSeguro() {
-     
+        double basePrima = this.calcularBasePrimaSeguro();
+        return basePrima + 110_000;
     }
 
-    public double aplicarDescuento(double porcentaje) {
-    }
 
     public double aplicarDescuento(double porcentaje, boolean clubMoteros) {
-        
+        double extraDescuento = 0;
+        if(clubMoteros) {
+            extraDescuento = 16;
+        }
+        return this.aplicarDescuento(porcentaje + extraDescuento);
     }
 
     // Getters
