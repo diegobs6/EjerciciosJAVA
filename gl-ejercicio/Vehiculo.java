@@ -69,6 +69,6 @@ public abstract class Vehiculo implements ITributable{
 
     @Override
     public String toString() {
-        return "Vehiculo <" + this.patente + ">";
+        return "Vehiculo <" + this.patente + ", " + this.marca + ", " + this.anio + ">";
     }
 }
