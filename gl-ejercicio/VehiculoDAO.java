@@ -62,14 +62,39 @@ public class VehiculoDAO {
     
     // Delete
     public boolean eliminar(String patente) {
+        // ej: patente = "p3"
+        for (int i = 0; i < this.vehiculos.size(); i++) {
+            Vehiculo vehiculoActual = this.vehiculos.get(i);
+
+            if (vehiculoActual.getPatente().equals(patente)) {
+                // vehiculos = ["p1", "p2", "p3", "p4"]
+
+                this.vehiculos.remove(i);
+                // vehiculos = ["p1", "p2", "p4"]
+
+                return true;
+            }
+        }
+        return false;
     }
     
     // Búsquedas adicionales
     public ArrayList<Vehiculo> buscarPorMarca(String marca) {
-       
+
+        ArrayList<Vehiculo> resultados = new ArrayList<>();
+
+        for (int i = 0; i < this.vehiculos.size(); i++) {
+            Vehiculo vehiculoActual = this.vehiculos.get(i);
+
+            if (vehiculoActual.getMarca().equals(marca)) {
+                resultados.add(vehiculoActual);
+            }
+        }
+        return resultados;
     }
     
     public ArrayList<Vehiculo> listarPorAnioDesc() {
+        // this.vehiculos.sort((v1, v2) -> v2.getAnio() - v1.getAnio());
         
     }
 }

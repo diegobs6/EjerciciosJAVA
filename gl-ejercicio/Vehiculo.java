@@ -71,4 +71,8 @@ public abstract class Vehiculo implements ITributable{
     public String toString() {
         return "Vehiculo <" + this.patente + ", " + this.marca + ", " + this.anio + ">";
     }
+
+    public String getMarca() {
+        return marca;
+    }
 }

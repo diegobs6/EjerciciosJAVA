@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Moto moto1 = new Moto("Moto 1 ABC123", "Yamaha", 2020, 15000, 200000, 600, true);
+        Moto moto1 = new Moto("Moto 1 ABC123", "Citroen", 2020, 15000, 200000, 600, true);
 
         Auto auto1 = new Auto("Auto 1 XYZ789", "Toyota", 2018, 30000, 250000, 4, false);
         Auto auto2 = new Auto("Auto 2 AAAAAA", "Jiundai", 2018, 30000, 250000, 4, false);
@@ -23,8 +23,9 @@ public class Main {
         dao1.printVehiculos();
 
 
+        ArrayList<Vehiculo> vehiculosCitroen = dao1.buscarPorMarca("Citroen");
 
         
-        System.out.println(moto1.calcularPrimaSeguro());
+        System.out.println(vehiculosCitroen);
     }
 }
