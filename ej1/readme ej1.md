@@ -11,7 +11,7 @@ class Comida:
 
 chocolate 	= new Comida("chocolate", 100 #lipidos, 200 #carbs)
 manzana 	= new Comida("manzana"	, 100 #lipidos, 200 #carbs)
-pera 		= new Comida("pera"		, 100 #lipidos, 200 #carbs)
+pera 		= new Comida("pera", 100 #lipidos, 200 #carbs)
 chocolatemm = new Comida("chocolate", 100 #lipidos, 200 #carbs)
 
 -------------
@@ -25,14 +25,14 @@ class ItemDeComida:
 	ComidaStats stats;
 	grams;
 
-chocolate	= new Comida("chocolate"	, 5 #lipidos per gram, 20 #carbs per gram)
-manzana 	= new Comida("manzana"		, 5 #lipidos per gram, 20 #carbs per gram)
-pera 		= new Comida("pera"			, 5 #lipidos per gram, 20 #carbs per gram)
+chocolate	= new Comida("chocolate", 5 #lipidos per gram, 20 #carbs per gram)
+manzana 	= new Comida("manzana", 5 #lipidos per gram, 20 #carbs per gram)
+pera 		= new Comida("pera", 5 #lipidos per gram, 20 #carbs per gram)
 
 chocolate_item 	= new ItemDeComida(chocolate, 200 #gr)
 chocolate_mm 	= new ItemDeComida(chocolate, 200 #gr)
 manzana_item 	= new ItemDeComida(manzana, 200 #gr)
-pera_item 		= new ItemDeComida(pera, 200 #gr)
+pera_item 	= new ItemDeComida(pera, 200 #gr)
 
 -----
 
