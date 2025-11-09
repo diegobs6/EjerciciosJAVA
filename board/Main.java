@@ -21,6 +21,8 @@ public class Main {
     }
 
     public static void printLines(ArrayList<ArrayList<Character>> lines) {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         System.out.println("\n");
         for(int i = 0; i < lines.size(); i++){
             Main.printCharacters(lines.get(i), i);
