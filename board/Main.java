@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 
 public class Main {
+    // https://www.asciiart.eu/animals
 
     // save multiline string
 static String BAT = (
